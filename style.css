@@ -49,3 +49,40 @@ html, body {
     margin-top: 5vh;
     text-align: right;
 }
+
+#result_wrapper, #spinner_wrapper {
+    display: none;
+}
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    margin-top: 6vh;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    margin-top: 6vh;
+}
+
+.result span {
+    font-size: 3vh;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: indigo;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+    max-width: 200px;
+    text-align: center;
+}
+
+.footer {
+    margin-top: 20vh;
+    font-size: 2vh;
+    margin-right: 20px;
+    margin-left: 20px;
+}
