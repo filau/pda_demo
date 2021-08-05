@@ -2,26 +2,23 @@
 
 """
 line.py
-
 divia_api is a Python library that allows to retrieve the timetable
 of Divia’s bus and tramways straight from a Python script.
 Copyright (C) 2021  Firmin Launay
-
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
-
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
-
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 from .stop import Stop
+from unidecode import unidecode
 
 
 class Line:
@@ -43,7 +40,7 @@ class Line:
         if len(corresponding_stops) > 0:
             return Stop(self.api_data, self, corresponding_stops[0])
         corresponding_stops = list(item for item in self.line_data["arrets"].values()
-                                   if item["nom"].replace(" " + self.line_data["codetotem"], "").lower() ==
-                                   stop_name.lower().replace(" " + self.line_data["codetotem"].lower(), ""))
+                                   if unidecode(item["nom"].replace(" " + self.line_data["codetotem"], "").lower()) ==
+                                   unidecode(stop_name.lower().replace(" " + self.line_data["codetotem"].lower(), "")))
         if len(corresponding_stops) > 0:
             return Stop(self.api_data, self, corresponding_stops[0])
