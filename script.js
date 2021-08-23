@@ -1,3 +1,5 @@
+if (window.location.href.startsWith("http://")) window.location.href.replace("http://", "https://");
+
 document.body.addEventListener("keyup", (e) => {
     if (e.keyCode == 13) {
         e.preventDefault()

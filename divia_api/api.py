@@ -21,7 +21,6 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-from divia_api.api import VALID_WAYS
 from browser import ajax
 from json import loads
 from .line import Line
